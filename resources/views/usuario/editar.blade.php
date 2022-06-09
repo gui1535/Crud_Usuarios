@@ -6,7 +6,7 @@
 
         <h2 class="mb-4 fs-2">Editar Usuário</h2>
 
-        <form action=" {{ route('atualizar_usuario', ['id' => $usuario->id]) }}" method="POST" class="mb-4">
+        <form action=" {{ route('atualizar_usuario', ['id' => $usuario->id]) }}" method="POST" class="d-flex mb-4">
             {{-- Token --}}
             @csrf
 

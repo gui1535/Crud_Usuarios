@@ -1,18 +1,13 @@
 @extends('layout.principal')
 
-<body class="d-flex justify-content-center align-items-center flex-column">
+<body class="">
 
-    <div class="container d-flex justify-content-center align-items-center flex-column">
-        <h1 class="page-header text-center mb-3 mt-3">Tabela de Usuarios</h1>
+    <div class="">
+
 
         {{-- Card --}}
         <div style="" class="card">
-
-            {{-- Cabecalho Card --}}
-            <div class="card-header pb-3 pt-3">
-                <a class="text-decoration-none text-primary" href="{{ url('/usuario') }}">Salvar Novo</a>
-            </div>
-
+            <h3 class="page-header text-center mb-2 mt-2">Tabela de Usuarios</h3>
             {{-- Tabela --}}
             <table class="table container table-striped">
 
@@ -50,12 +45,11 @@
                             <td>
                                 <button type="button" class="btn btn-warning">
                                     <a class="text-decoration-none text-light"
-                                        href="{{ route('editar_usuario', ['id' => $u->id]) }}">Editar</a>
+                                        href="{{ route('editar_usuario', ['id' => $u->id]) }}" id="editar">Editar</a>
                                 </button>
                                 <button type="button" class="btn btn-danger">
                                     <a class="text-decoration-none text-light"
                                         href="{{ route('excluir_usuario', ['id' => $u->id]) }}">Deletar</a>
-
                             </td>
                         </tr>
                     @endforeach
@@ -63,6 +57,7 @@
             </table>
         </div>
     </div>
+  
 </body>
 
 </html>
