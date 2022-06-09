@@ -2,19 +2,21 @@
 
 <body class="d-flex justify-content-center align-items-center flex-column">
 
-    <style>
-        @media screen and (max-width:1000px) {
-            
-        }
-    </style>
     <div class="container d-flex justify-content-center align-items-center flex-column">
         <h1 class="page-header text-center mb-3 mt-3">Tabela de Usuarios</h1>
+
+        {{-- Card --}}
         <div style="" class="card">
+
+            {{-- Cabecalho Card --}}
             <div class="card-header pb-3 pt-3">
-                <a class="text-decoration-none text-primary" href="./usuario.html">Salvar Novo</a>
+                <a class="text-decoration-none text-primary" href="{{ url('/usuario') }}">Salvar Novo</a>
             </div>
+
+            {{-- Tabela --}}
             <table class="table container table-striped">
 
+                {{-- Colunas Tabela --}}
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -27,13 +29,22 @@
                     </tr>
                 </thead>
 
+                {{-- Corpo Tabela --}}
                 <tbody>
+
                     @foreach ($usuarios as $u)
+                        {{-- Dados --}}
                         <tr>
                             <th scope="row">{{ $u->id }}</th>
                             <td>{{ $u->nome }}</td>
                             <td>{{ $u->login }}</td>
-                            <td>{{ $u->senha }}</td>
+                            <td>
+                                @if (strlen($u->senha) > 1)
+                                    Criptografada
+                                @else
+                                    Usuario sem senha
+                                @endif
+                            </td>
                             <td>{{ $u->created_at }}</td>
                             <td>{{ $u->updated_at }}</td>
                             <td>

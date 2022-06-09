@@ -4,11 +4,19 @@
 
     <div class="d-flex justify-content-center align-items-center flex-column">
 
-        <h2 class="mb-4 fs-2">Cadastrar Usuário</h2>
+        <h2 class="mb-4 fs-2">Editar Usuário</h2>
 
         <form action=" {{ route('atualizar_usuario', ['id' => $usuario->id]) }}" method="POST" class="mb-4">
             {{-- Token --}}
             @csrf
+
+            {{-- ID --}}
+            <div class="mb-3">
+                <label for="nome">ID
+                    <input type="text" disabled name="nome" id="nome" class="form-control"
+                        value="{{ $usuario->id }}">
+                </label>
+            </div>
 
             {{-- Nome --}}
             <div class="mb-3">
@@ -27,8 +35,7 @@
             {{-- Senha --}}
             <div class="mb-1">
                 <label for="senha">Senha
-                    <input type="password" name="senha" id="senha" class="form-control"
-                        value="{{ $usuario->senha }}">
+                    <input type="password" name="senha" id="senha" class="form-control">
                 </label>
             </div>
 
@@ -51,6 +58,18 @@
                 Visualizar todos usuarios</a>
         </p>
     </div>
+
+    <script>
+        function exibeSenha() {
+
+            var exSenha = document.getElementById("senha");
+            if (exSenha.type === "password") {
+                exSenha.type = "text";
+            } else {
+                exSenha.type = "password";
+            }
+        }
+    </script>
 </body>
 
 </html>

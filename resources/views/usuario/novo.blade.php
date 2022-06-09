@@ -48,10 +48,10 @@
             <a class="text-decoration-none" href="{{ url('/usuario/lista') }}">Visualizar todos usuarios</a>
         </p>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
-        function exibeSenha() {
 
+        function exibeSenha() {
             var exSenha = document.getElementById("senha");
             if (exSenha.type === "password") {
                 exSenha.type = "text";
