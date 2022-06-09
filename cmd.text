@@ -1,0 +1,3 @@
+Criar Model -> php artisan make:model Usuario -m
+Executar Migrations -> php artisan migrate
+Criar Controller -> php artisan make:controller UsuarioController
