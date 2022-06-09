@@ -20,7 +20,7 @@ class UsuarioController extends Controller
         Usuario::create([
             'nome' => $request->nome,
             'login' => $request->login,
-            'senha' => $request->senha,
+            'senha' => bcrypt($request->senha)
         ]);
         return "Usuário foi inserido com sucesso";
     }
@@ -53,9 +53,9 @@ class UsuarioController extends Controller
     {
         $usuario = Usuario::findOrFail($id);
         $usuario->update([
-            'nome' => $request -> nome,
-            'login' => $request -> login,
-            'senha' => $request -> senha,
+            'nome' => $request->nome,
+            'login' => $request->login,
+            'senha' => $request->senha,
         ]);
         return "Usuario atualizado com sucesso";
     }
