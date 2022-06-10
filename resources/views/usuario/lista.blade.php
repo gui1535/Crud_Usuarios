@@ -21,6 +21,7 @@
                     <th scope="col">Login</th>
                     <th scope="col">Senha</th>
                     <th scope="col">Criado em</th>
+                    <th scope="col">Atualizado em</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -42,6 +43,7 @@
                             @endif
                         </td>
                         <td>{{ $u->created_at }}</td>
+                        <td>{{ $u->updated_at }}</td>
                         {{-- Ações --}}
                         <td>
                             <a class="text-decoration-none text-light"
