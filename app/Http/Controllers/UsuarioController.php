@@ -20,9 +20,9 @@ class UsuarioController extends Controller
         Usuario::create([
             'nome' => $request->nome,
             'login' => $request->login,
-            'senha' => bcrypt($request->senha)
+            'senha' => bcrypt($request->senha) // Criptografar senha
         ]);
-        return "Usuário foi inserido com sucesso";
+        return view('usuario.novo');
     }
 
     // Function para listar usuarios
@@ -38,7 +38,7 @@ class UsuarioController extends Controller
     {
         $usuario = Usuario::findOrFail($id);
         $usuario->delete();
-        return "Livro Excluído com sucesso.";
+        return "a Excluído com sucesso.";
     }
 
     // Function para editar usuarios
@@ -57,6 +57,6 @@ class UsuarioController extends Controller
             'login' => $request->login,
             'senha' => $request->senha,
         ]);
-        return "Usuario atualizado com sucesso";
+        return view('usuario.novo');
     }
 }

@@ -21,8 +21,8 @@ Route::get('/usuario', function () {
 });
 
 // Novo usuario
-Route::get('/usuario/novo', 'UsuarioController@criar');
-Route::post('/usuario/novo', 'UsuarioController@store')->name('salvar_usuario');
+Route::get('/usuario', 'UsuarioController@criar');
+Route::post('/usuario', 'UsuarioController@store')->name('salvar_usuario');
 
 // Listar usuario
 Route::get('/usuario/lista', 'UsuarioController@lista');
