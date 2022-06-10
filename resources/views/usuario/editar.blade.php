@@ -70,12 +70,12 @@
 
     {{-- SCRIPTS --}}
     <script>
+        // Confirma certeza do usuario
         function pergunta() {
             return confirm(`Confirma a edição do usuario ${document.getElementById("nome").value}?`);
         }
 
         function exibeSenha() {
-
             var exSenha = document.getElementById("senha");
             if (exSenha.type === "password") {
                 exSenha.type = "text";

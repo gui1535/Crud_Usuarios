@@ -9,7 +9,6 @@
             <a href="{{ URL('/usuario/lista') }}" class="text-decoration-none">Atualizar tabela</a>
         </div>
 
-
         {{-- Tabela --}}
         <table class="table container table-striped table-light">
 
@@ -28,7 +27,7 @@
 
             {{-- Corpo Tabela --}}
             <tbody>
-
+                {{-- Foreach --}}
                 @foreach ($usuarios as $u)
                     {{-- Dados --}}
                     <tr>
@@ -43,6 +42,7 @@
                             @endif
                         </td>
                         <td>{{ $u->created_at }}</td>
+                        {{-- Ações --}}
                         <td>
                             <a class="text-decoration-none text-light"
                                 href="{{ route('editar_usuario', ['id' => $u->id]) }}" id="editar">
