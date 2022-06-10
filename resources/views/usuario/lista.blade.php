@@ -21,8 +21,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Login</th>
                     <th scope="col">Senha</th>
-                    <th scope="col">Criação</th>
-                    <th scope="col">Atualização</th>
+                    <th scope="col">Criado em</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -44,7 +43,6 @@
                             @endif
                         </td>
                         <td>{{ $u->created_at }}</td>
-                        <td>{{ $u->updated_at }}</td>
                         <td>
                             <a class="text-decoration-none text-light"
                                 href="{{ route('editar_usuario', ['id' => $u->id]) }}" id="editar">
