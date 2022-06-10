@@ -1,13 +1,18 @@
 @extends('layout.principal')
 
-<body class="container">
+<body class="container d-flex justify-content-center" style="width:100vw; height: 100vh;">
     {{-- Card --}}
-    <div class="card mt-2 mb-2r">
+    <div class="card mt-2 mb-2!" style="width:100%; height: 100%;">
+        <div class="d-flex align-items-center justify-content-around">
+            <a href="{{ URL('/') }}" class="text-decoration-none">Cadastrar novo usuario</a>
+            <h3 class="mb-2 mt-2 text-center">Tabela de Usuarios</h3>
+            <a href="{{ URL('/usuario/lista') }}" class="text-decoration-none">Atualizar tabela</a>
+        </div>
 
-        <h3 class="mb-2 mt-2 text-center">Tabela de Usuarios</h3>
 
         {{-- Tabela --}}
         <table class="table container table-striped table-light">
+
 
             {{-- Colunas Tabela --}}
             <thead>
@@ -41,20 +46,24 @@
                         <td>{{ $u->created_at }}</td>
                         <td>{{ $u->updated_at }}</td>
                         <td>
-                            <button type="button" class="btn btn-warning">
-                                <a class="text-decoration-none text-light"
-                                    href="{{ route('editar_usuario', ['id' => $u->id]) }}" id="editar">Editar</a>
-                            </button>
-                            <button type="button" class="btn btn-danger">
-                                <a class="text-decoration-none text-light"
-                                    href="{{ route('excluir_usuario', ['id' => $u->id]) }}">Deletar</a>
+                            <a class="text-decoration-none text-light"
+                                href="{{ route('editar_usuario', ['id' => $u->id]) }}" id="editar">
+                                <button type="button" class="btn btn-warning">
+                                    Editar
+                                </button>
+                            </a>
+                            <a class="text-decoration-none text-light"
+                                href="{{ route('excluir_usuario', ['id' => $u->id]) }}">
+                                <button type="button" class="btn btn-danger">
+                                    Deletar
+                                </button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-
 
 </body>
 

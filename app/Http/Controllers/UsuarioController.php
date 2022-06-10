@@ -38,7 +38,7 @@ class UsuarioController extends Controller
     {
         $usuario = Usuario::findOrFail($id);
         $usuario->delete();
-        return "a Excluído com sucesso.";
+        return redirect()->back();
     }
 
     // Function para editar usuarios
@@ -57,6 +57,6 @@ class UsuarioController extends Controller
             'login' => $request->login,
             'senha' => $request->senha,
         ]);
-        return view('usuario.novo');
+        return redirect()->back();
     }
 }
